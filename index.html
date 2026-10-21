@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Lara LIma — Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Filtro de distorção usado pelo efeito Liquid Crystal -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <filter id="liquid-glass" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+            <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="4" result="noise">
+                <animate attributeName="baseFrequency" dur="30s" values="0.008 0.012;0.012 0.008;0.008 0.012"
+                    repeatCount="indefinite" />
+            </feTurbulence>
+            <feGaussianBlur in="noise" stdDeviation="2" result="soft" />
+            <feDisplacementMap in="SourceGraphic" in2="soft" scale="55" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
+
+    <nav aria-label="Principal">
+        <a href="#hero">Início</a>
+        <a href="#skills">Skills</a>
+        <a href="#timeline">Trajetória</a>
+        <a href="#contact">Contato</a>
+    </nav>
+
+    <!-- 1. HERO -->
+    <section id="hero">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="blob b4"></div>
+        <div class="wrap">
+            <div class="glass hero-card" id="heroCard">
+                <h1 id="name" aria-label="Seu Nome" data-text="Lara Lima"></h1>
+                <p class="role">Desenvolvedor(a) de software</p>
+                <p class="intro">Transformo ideias em código limpo e interfaces com personalidade.</p>
+                <div class="hero-foot">
+                    <a class="btn" href="#contact">Vamos conversar</a>
+                    <div class="badges" aria-hidden="true">
+                        <span class="clay sm">&lt;/&gt;</span><span class="clay sm dark">{ }</span><span
+                            class="clay sm">UI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SKILLS (mapa de metrô) -->
+    <section id="skills">
+        <div class="blob b6"></div>
+        <div class="blob b7"></div>
+        <div class="wrap">
+            <h2>Mapa de habilidades</h2>
+            <p class="lead">Cada linha é uma área. Onde elas se cruzam, a habilidade serve para mais de um caminho.</p>
+            <div class="liquid metro" id="metro">
+                <ul class="legend" id="legend"></ul>
+                <div class="map-scroll">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. LINHA DO TEMPO -->
+    <section id="timeline">
+        <div class="wrap">
+            <h2>Meu começo na tecnologia</h2>
+            <p class="lead">Exemplo de marcos. Troque datas e textos pela sua história.</p>
+            <ol class="tl">
+                <li><b>2022</b>
+                    <h3>Primeiro contato</h3>
+                    <p>Descobri a programação e escrevi minhas primeiras linhas de código.</p>
+                </li>
+                <li><b>2023</b>
+                    <h3>Primeiros passos</h3>
+                    <p>Iniciei o Ensino Médio Técnico em Informática, onde aprendi várias linguagens como Python e C++.</p>
+                </li>
+                <li><b>2025</b>
+                    <h3>Fim de um ciclo</h3>
+                    <p>Encerrei o Ensino Médio Técnico com um projeto de robótica que conquistou o terceiro lugar entre mais de 40 projetos.</p>
+                </li>
+                <li><b>Hoje</b>
+                    <h3>Em evolução</h3>
+                    <p> Encaminhando para o segundo ano de Engenharia de Software na FIAP, aprofundando conhecimentos e buscando novos desafios.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- 4. CONTATO -->
+    <section id="contact">
+        <div class="blob b3"></div>
+        <div class="blob b5"></div>
+        <div class="wrap">
+            <h2>Vamos conversar</h2>
+            <p class="lead">Tem um projeto ou uma vaga? Escolha o canal que preferir.</p>
+            <div class="cards">
+                <a class="glass c" href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener"><span
+                        class="clay sm">in</span>
+                    <div><strong>LinkedIn</strong><small>/in/lara-lima-b897932bb</small></div>
+                </a>
+                <a class="glass c" href="https://github.com/seu-usuario" target="_blank" rel="noopener"><span
+                        class="clay sm dark">&lt;/&gt;</span>
+                    <div><strong>GitHub</strong><small>@Larabeatriz08</small></div>
+                </a>
+                <a class="glass c" href="mailto:seu@email.com"><span class="clay sm">@</span>
+                    <div><strong>E-mail</strong><small>laradesouzalima08@gmail.com</small></div>
+                </a>
+            </div>
+            <footer>© <span id="y"></span> Lara Lima</footer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
